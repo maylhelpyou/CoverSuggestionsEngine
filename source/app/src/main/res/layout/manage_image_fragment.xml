@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.simonetugnetti.coversuggestionsengine.sharedViewModels.ManageImageAndHistoryViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".manageImage.ManageImageFragment">
+
+
+        <ImageView
+            android:id="@+id/selectedImage"
+            loadImage="@{viewModel.imageUrl}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/default_margin"
+            android:contentDescription="@string/immagine_selezionata"
+            app:layout_constraintBottom_toTopOf="@+id/saveDevice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/saveDevice"
+            style="@style/DefaultCustomButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:text="@string/salva_immagine_nel_dispositivo"
+            android:textSize="@dimen/medium_text"
+            app:layout_constraintBottom_toTopOf="@+id/suggestAnobii"
+            app:layout_constraintEnd_toStartOf="@+id/readImage"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/suggestAnobii"
+            style="@style/DefaultCustomButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="@string/suggerisci_su_anobii"
+            android:textSize="@dimen/medium_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/readImage"
+            style="@style/DefaultCustomButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/scegli_immagine_dal_dispositivo"
+            android:textSize="@dimen/medium_text"
+            app:layout_constraintBottom_toBottomOf="@+id/saveDevice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/saveDevice"
+            app:layout_constraintTop_toTopOf="@+id/saveDevice" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

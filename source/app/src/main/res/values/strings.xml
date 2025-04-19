@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">CoverSuggestionsEngine</string>
+    <string name="btn_cerca">Cerca</string>
+    <string name="descr_image">Cover</string>
+    <string name="title">Ricerca Cover</string>
+    <string name="image_util">Image Util</string>
+    <string name="logo_toolbar">Logo toolbar</string>
+    <string name="cover_anobii">Suggestions Cover</string>
+    <string name="salva_immagine_nel_dispositivo">Salva immagine \n sul dispositivo</string>
+    <string name="suggerisci_su_anobii">Suggerisci \n la cover</string>
+    <string name="immagine_selezionata">Immagine selezionata</string>
+    <string name="scegli_immagine_dal_dispositivo">Scegli immagine \n dal dispositivo</string>
+    <string name="scannerizza_il_barcode">Scannerizza il barcode</string>
+    <string name="cronologia_cover_suggerite">Cronologia cover suggerite</string>
+    <string name="cover_suggerite">Cover Suggerite</string>
+    <string name="cancella_cronologia">Cancella cronologia</string>
+    <string name="image_cover_history">Image Cover History</string>
+    <string name="dettagli">Dettagli</string>
+    <string name="elimina">Elimina</string>
+    <string name="placeholder_no_request">Placeholder no Request</string>
+    <string name="isbn">ISBN</string>
+    <string name="autore">Autore</string>
+    <string name="nome_libro">Nome libro</string>
+    <string name="aggiorna">Aggiorna</string>
+    <string name="carica_immagine_in_cloud">Carica immagine in Cloud</string>
+    <string name="preleva_immagine_dal_cloud">Preleva immagine dal Cloud</string>
+    <string name="cover_salvate">Cover salvate</string>
+    <string name="cancella_lista_cover">Cancella lista cover</string>
+    <string name="image_cloud_firebase_storage">Image Cloud Firebase Storage</string>
+    <string name="preleva">Preleva</string>
+
+</resources>

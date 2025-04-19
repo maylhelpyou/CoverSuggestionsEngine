@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/coverFragment">
+    <fragment
+        android:id="@+id/coverFragment"
+        android:name="it.simonetugnetti.coversuggestionsengine.cover.CoverFragment"
+        android:label="cover_fragment"
+        tools:layout="@layout/cover_fragment" >
+        <action
+            android:id="@+id/action_coverFragment_to_manageImageFragment"
+            app:destination="@id/manageImageFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_coverFragment_to_barcodeFragment"
+            app:destination="@id/barcodeFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <argument
+            android:name="isbnBarcode"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+    <fragment
+        android:id="@+id/manageImageFragment"
+        android:name="it.simonetugnetti.coversuggestionsengine.manageImage.ManageImageFragment"
+        android:label="ManageImageFragment"
+        tools:layout="@layout/manage_image_fragment">
+        <action
+            android:id="@+id/action_manageImageFragment_to_cloudImageFragment"
+            app:destination="@id/cloudImageFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+        <argument
+            android:name="infoBooks"
+            app:argType="com.simonetugnetti.coversuggestionsengine.util.InfoBooks" />
+        <argument
+            android:name="imageCloudBitmap"
+            app:argType="android.graphics.Bitmap"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/barcodeFragment"
+        android:name="it.simonetugnetti.coversuggestionsengine.barcode.BarcodeFragment"
+        android:label="barcode_fragment"
+        tools:layout="@layout/barcode_fragment" >
+        <action
+            android:id="@+id/action_barcodeFragment_to_coverFragment"
+            app:destination="@id/coverFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/barcodeFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="it.simonetugnetti.coversuggestionsengine.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/cloudImageFragment"
+        android:name="it.simonetugnetti.coversuggestionsengine.cloudImage.CloudImageFragment"
+        android:label="CloudImageFragment"
+        tools:layout="@layout/fragment_history">
+        <argument
+            android:name="infoBooks"
+            app:argType="com.simonetugnetti.coversuggestionsengine.util.InfoBooks" />
+        <action
+            android:id="@+id/action_cloudImageFragment_to_manageImageFragment"
+            app:destination="@id/manageImageFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/cloudImageFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>

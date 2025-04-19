@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+        <data>
+                <import type="android.view.View" />
+                <variable
+                    name="viewModel"
+                    type="com.simonetugnetti.coversuggestionsengine.cover.CoverViewModel" />
+        </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".cover.CoverFragment">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:text="@string/title"
+                    android:textAppearance="@style/TextAppearance.Title"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/infoISBN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@{viewModel.hintSearchBook}"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:layout_marginStart="50dp"
+                    app:layout_constraintBottom_toTopOf="@+id/sendRequest"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title" />
+
+                <Button
+                    android:id="@+id/sendRequest"
+                    style="@style/DefaultCustomButton"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{viewModel.enableGetImage}"
+                    android:text="@string/btn_cerca"
+                    app:layout_constraintBottom_toTopOf="@+id/barcode"
+                    app:layout_constraintEnd_toEndOf="@+id/infoISBN"
+                    app:layout_constraintStart_toStartOf="@+id/infoISBN"
+                    app:layout_constraintTop_toBottomOf="@+id/infoISBN" />
+
+                <ImageView
+                    loadImage="@{viewModel.imageUtil}"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/medium_margin"
+                    android:contentDescription="@string/image_util"
+                    android:visibility="@{viewModel.visibleImageUtil ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/infoISBN"
+                    app:layout_constraintTop_toBottomOf="@+id/title" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listCover"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/medium_margin"
+                    android:visibility="@{viewModel.visibleImageUtil ? View.GONE : View.VISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/infoISBN"
+                    app:layout_constraintTop_toBottomOf="@+id/title" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/medium_margin"
+                    android:background="@color/white"
+                    android:indeterminateTint="@color/color_selector"
+                    android:padding="80dp"
+                    android:visibility="@{viewModel.progressVisible ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/infoISBN"
+                    app:layout_constraintTop_toBottomOf="@+id/title" />
+
+                <Button
+                    android:id="@+id/barcode"
+                    style="@style/DefaultCustomButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scannerizza_il_barcode"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/sendRequest"
+                    app:layout_constraintStart_toStartOf="@+id/sendRequest"
+                    app:layout_constraintTop_toBottomOf="@+id/sendRequest" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/filterSearchItem"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_sort_24"
+        android:visible="false" >
+
+        <menu>
+
+            <item
+                android:id="@+id/filterISBNSubItem"
+                android:title="@string/isbn" />
+
+            <item
+                android:id="@+id/filterNameSubItem"
+                android:title="@string/nome_libro" />
+
+            <item
+                android:id="@+id/filterAuthorSubItem"
+                android:title="@string/autore" />
+
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/cloudImageItem"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_cloud_upload_24"
+        android:visible="false" >
+
+        <menu>
+
+            <item
+                android:id="@+id/uploadCloudImageSubItem"
+                android:title="@string/carica_immagine_in_cloud" />
+
+            <item
+                android:id="@+id/getCloudImageSubItem"
+                android:title="@string/preleva_immagine_dal_cloud" />
+
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/searchBookItem"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:visible="false"
+        app:showAsAction="ifRoom"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:id="@+id/historyItem"
+        android:title="@string/cronologia_cover_suggerite" />
+
+</menu>
